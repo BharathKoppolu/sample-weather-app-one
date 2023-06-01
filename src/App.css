@@ -1,0 +1,31 @@
+.container {
+  text-align: center;
+  display:flex;
+  border-style: solid;
+  border-color: gray;
+  background-color: #87e7eb;
+}
+
+.header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: gray;
+}
+
+.button {
+  margin:0;
+  border-radius: 12px;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  transition: all 1s ease-out;
+}
+
+.button:hover {
+  box-shadow: 0 0 0 1px rgb(4, 95, 95);
+}
