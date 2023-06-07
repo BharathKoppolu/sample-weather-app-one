@@ -1,0 +1,9 @@
+.description-page {
+    margin: 20px;
+    border-style: solid;
+    border-color: gray;
+    width: 100%;
+    height: 100vh;
+    border-radius: 12px;
+  }
+
