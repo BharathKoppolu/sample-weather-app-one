@@ -3,20 +3,27 @@ import AddCitiesModal from "./AddCitiesModal";
 import './CitiesPage.css';
 
 const CitiesPage = () => {
-        const [addCitiesModal, setAddCitiesModal] = useState(false);
-      
-        const toggleModal = () => {
-          setAddCitiesModal(!addCitiesModal);
-        };
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModalHandler = () => {
+        setIsModalOpen(true);
+    };
+
+
+    // const onSaveHandler = () => {
+    //     console.log('savingcity..');
+    //     closeModalHandler();
+    // };
+
 
     return (
         <div className="cities-page">
             <div className='header'>
                 <label>Cities</label>
-                <button type="button" onClick={toggleModal} className="button">
+                <button type="button" onClick={openModalHandler} className="button">
                     <input type="image" src="../../assets/plus_icon.png" height="50" width="50" alt="plus icon" />
                 </button>
-                <AddCitiesModal show={addCitiesModal}/>
+                {isModalOpen && <AddCitiesModal toggleModal={setIsModalOpen}/>}
             </div>
         </div>
     );

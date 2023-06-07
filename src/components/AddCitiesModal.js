@@ -1,36 +1,37 @@
-import React from "react";
+import React, { useState } from 'react';
+import Card from '../UI/Card.css';
 import "./AddCitiesModal.css";
 
-function AddCitiesModal(props) {
-    return (
-        <>
-         {
-         show ?
-    
-         <div className="modalContainer">
-            <div className="modal" >
-              <header className="modal_header">
-                <h2 className="modal_header-title"> Modal Title </h2>
-                <button className="close" >
-                  <img src="../../public/assets/close_icon.jpg" alt="close" />
-                </button>
-              </header>
-              <main className="modal_content">
-              This is Modal Content
-              </main>
-              <footer className="modal_footer">
-                <button className="modal-close" >
-                  Cancel
-                </button>
-    
-                <button className="submit">Submit</button>
-              </footer>
-            </div>
-          </div>
-          : null
-         }
-        </>
-    );
-}
+
+const AddCitiesModal = ({toggleModal}) => {
+  // const [cityName, setCityName] = useState('');
+
+  // const handleSave = () => {
+  //   onSave(cityName);
+  //   setCityName('');
+  // };
+  const Dummy_cities = ['Hyderabad', 'Vijayawada', 'Delhi', 'bangalore'];
+  const Dummy_temperatures = [10, 25, 42, 38];
+  return (
+    <div className='modal-wrapper'>
+      <div className="modal-container">
+        <div className="modal-header">
+          <p>Add Cities</p>
+          <button type="button" onClick={() => toggleModal(false)}>X</button>
+        </div>
+        <div className="search-bar">
+          <input type="text" placeholder='Search Cities...'/>
+        </div>
+        <div className="cities-list">
+          <Card city={}/>
+          <li>Vijayawada</li>
+          <li>Delhi</li>
+          <li>Bangalore</li>
+        </div>
+      </div>
+    </div>
+
+  );
+};
 
 export default AddCitiesModal;
